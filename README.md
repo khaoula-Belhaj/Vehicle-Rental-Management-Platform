@@ -4,6 +4,8 @@
 
 > A complete digital platform for premium vehicle rental operations, combining a responsive customer-facing website with a cross-platform management application, REST API and relational database.
 
+> **Internship project** — Grozny S.A.R.L, July – August 2026 (application internship, ENSA Fez), built for El Bakkali Prestige Auto, a premium car rental agency in Meknes.
+
 [![Flutter](https://img.shields.io/badge/Flutter-3.x-02569B?logo=flutter\&logoColor=white)](https://flutter.dev/)
 [![Dart](https://img.shields.io/badge/Dart-3.x-0175C2?logo=dart\&logoColor=white)](https://dart.dev/)
 [![PHP](https://img.shields.io/badge/PHP-8.x-777BB4?logo=php\&logoColor=white)](https://www.php.net/)
@@ -15,6 +17,8 @@
 [![SQLite](https://img.shields.io/badge/SQLite-07405E?logo=sqlite\&logoColor=white)](https://sqlite.org/)
 [![Git](https://img.shields.io/badge/Git-F05032?logo=git\&logoColor=white)](https://git-scm.com/)
 [![GitHub](https://img.shields.io/badge/GitHub-181717?logo=github\&logoColor=white)](https://github.com/)
+
+![Website home page](screenshots/website-home.png)
 
 ---
 
@@ -1355,30 +1359,39 @@ Internal infrastructure information
 
 # Screenshots
 
-Screenshots can be added to document the application interface.
+## Architecture
 
-Recommended screenshots:
+![General architecture](screenshots/architecture.png)
 
-```text
-screenshots/
-├── website-home.png
-├── catalogue.png
-├── vehicle-details.png
-├── reservation.png
-├── dashboard.png
-├── vehicles.png
-├── clients.png
-├── reservations.png
-├── maintenance.png
-├── document-scanner.png
-└── contract-pdf.png
-```
+![Mobile application internal architecture](screenshots/mobile-architecture.png)
 
-Example:
+## Customer Website
 
-```markdown
-![Dashboard](screenshots/dashboard.png)
-```
+| Vehicle catalogue with filters | Reservation — vehicle selection |
+|---|---|
+| ![Catalogue](screenshots/catalogue.png) | ![Reservation](screenshots/reservation.png) |
+
+| Deposit payment step | Responsive design |
+|---|---|
+| ![Payment](screenshots/payment.png) | ![Responsive](screenshots/responsive.png) |
+
+## Management Application
+
+| Dashboard | Fleet management |
+|---|---|
+| ![Dashboard](screenshots/dashboard.png) | ![Vehicles](screenshots/vehicles.png) |
+
+**Document scanner and PDF contract generation**
+
+![Document scanner](screenshots/document-scanner.png)
+
+**Automatic receipt generation workflow**
+
+![Receipt generation](screenshots/receipt-generation.png)
+
+## Database
+
+![Relational database schema](screenshots/database-schema.png)
 
 ---
 
@@ -1387,6 +1400,7 @@ Example:
 | Property                | Details                            |
 | ----------------------- | ---------------------------------- |
 | Project                 | El Bakkali Prestige Auto           |
+| Context                 | Internship — Grozny S.A.R.L (Jul – Aug 2026) |
 | Type                    | Vehicle Rental Management Platform |
 | Domain                  | Vehicle Rental                     |
 | Location                | Meknes, Morocco                    |
