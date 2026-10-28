@@ -1304,6 +1304,52 @@ The platform was designed to:
 
 ---
 
+# Roadmap — Blockchain-Based Traceability & Contract Integrity (In Progress)
+
+The platform is being extended with a **traceability and proof-of-integrity layer**, so that every contract, inspection and business operation can be verified later and any silent modification is detected.
+
+## Target architecture
+
+```text
+ Web interface + Flutter application
+   (administration, employees, contracts, inspections, GPS tracking)
+                    │
+ PHP backend / secured REST API
+   (authorization, validation, workflow, signatures, file management)
+                    │
+       ┌────────────┼──────────────────────┐
+     MySQL       Private document         Cryptographic proof journal
+ (vehicles,      storage (PDF contracts,  (SHA-256 fingerprints, hash-chained
+  clients,       versions, photos,         events, signed checkpoints,
+  contracts,     signature evidence)       integrity verification)
+  GPS, …)
+```
+
+## Modules
+
+| Module | Scope |
+|---|---|
+| **Vehicle lifecycle** | Statuses (in preparation, available, reserved, rented, maintenance, immobilized, out of service), audited history of every change (author, date, old/new value), GPS tracker linked to each vehicle |
+| **Check-out / check-in inspections** | Mileage, fuel level, checklist, timestamped damage photos, validation by the employee (and the client), inspection report PDF attached to the contract |
+| **Maintenance** | Planning by date or mileage, repairs, parts, costs and invoices; an immobilized vehicle cannot be booked |
+| **Automatic contracts** | Contract generated from the validated reservation (client, vehicle, dates, rates, options), availability and overlap checks, numbered and versioned PDF |
+| **Electronic signature** | Secure signing flow, consent and signature events recorded, signed version locked — any correction creates a new version |
+| **Proof verification** | SHA-256 fingerprint of each signed PDF and inspection report, hash-chained event log, signed checkpoints (Merkle proofs), tamper detection and exportable evidence files |
+
+## Contract workflow
+
+```text
+Validated reservation → Contract generation → Validation → Electronic signature
+   → Locked final PDF (SHA-256 fingerprint archived) → Vehicle handover (inspection)
+   → Return & closing (final inspection, fees, full history)
+```
+
+## Privacy by design
+
+Only **fingerprints and proofs** go into the proof journal. Personal data (ID card, driving licence), GPS coordinates, photos and full contracts stay in the secured database and private storage — **never on a public blockchain**.
+
+---
+
 # Future Improvements
 
 Potential improvements include:
